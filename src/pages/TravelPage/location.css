@@ -1,0 +1,43 @@
+  
+  @keyframes pulse {
+    0% {
+        width: 20px;
+        height: 20px
+    }
+    50% {
+        width: 25px;
+        height: 25px
+    }
+    100% {
+        width: 20px;
+        height: 20px
+    }
+  }
+  
+
+.current-location-marker {
+    width: 20px; /* Adjust size */
+    height: 20px; /* Adjust size */
+    background: rgb(0, 60, 255); /* Path to your location icon */
+    background-size: contain; /* Ensure the image fits the div */
+    background-repeat: no-repeat; /* Avoid repeating the background */
+    border-radius: 50%; /* Round shape */
+    border: 4px solid white; /* Border for emphasis */
+    box-shadow: 2px 5px 5px black;
+    animation: pulse 1.5s infinite; /* Apply wave animation */
+  }
+
+
+
+.mark-location-marker {
+  text-align: center;
+  vertical-align: middle;
+  font-weight: bold;
+  font-size: 2px;
+  width: 30px; /* Adjust size */
+  height: 30px; /* Adjust size */
+  background-size: contain; /* Ensure the image fits the div */
+  background-repeat: no-repeat; /* Avoid repeating the background */
+  border-radius: 25%; /* Round shape */
+  box-shadow: 2px 5px 5px black;
+}

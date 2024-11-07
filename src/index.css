@@ -1,0 +1,43 @@
+:root {
+  --tgui--font-family: 'VT323', monospace !important;
+  --tg-theme-text-color: black !important;
+  --tg-theme-secondary-bg-color: white !important;
+  --tg-theme-section-bg-color: gray !important;
+  --tg-theme-bg-color: white !important;
+  --tg-theme-bg-color-highlight: #e9e9e9 !important;
+  --tg-theme-button-color: linear-gradient(270deg, rgba(255, 57, 45, 0.2) 20.35%, rgba(0, 0, 0, 0) 70.99%), rgb(252, 221, 93) !important;
+  --tg-theme-button-text-color: #101010 !important;
+  --tg-theme-link-color: rgb(252, 221, 93) !important;
+}
+html, body, #root {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  /* overscroll-behavior: none; */
+}
+#root {
+  /* Preserve scrolling behavior */
+  overflow-y: auto;
+}
+* {
+  font-family: 'VT323', monospace !important;
+}
+body {
+
+    padding: 0;
+   margin: 0;
+  zoom: 80%;
+  background: var(--tg-theme-secondary-bg-color, #101010);
+  font-family: 'VT323', monospace !important;
+  color: var(--tg-theme-text-color);
+  padding: 0;
+  margin: 0;
+  @media (max-width: 360px) {
+    #root {
+      margin-bottom: 2.9rem;
+    }
+    div[role=dialog] {
+      margin-bottom: 2.9rem;
+    }
+  }
+}
