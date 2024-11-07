@@ -1,15 +1,12 @@
 import {Iconify} from "@/components/iconify";
-import {ILocationStore,ITabs} from "@/types/index.type";
-import {encodeLocationKey} from "@/utils";
+import {ITabs} from "@/types/index.type";
 import {Button,Grid2,IconButton} from "@mui/material";
-import {cloudStorage as cloudData} from "@telegram-apps/sdk";
-import "mapbox-gl/dist/mapbox-gl.css";
 import {useRef} from "react";
 
 export const TravelMapModal = ({
   visible,
   setVisible,
-  setTab,
+  // _zsetTab,
 }: {
   setTab: React.Dispatch<React.SetStateAction<ITabs>>;
   visible: boolean;

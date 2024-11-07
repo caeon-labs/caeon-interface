@@ -21,7 +21,7 @@ export const BoostCardMain = ({
   // setVisible,
   // travelMapVisible,
   // setTravelMapVisible,
-  setTab,
+  // setTab,
 }: // visible,
 {
   item: INFTMetadata;
@@ -225,7 +225,7 @@ export const BoostCardMain = ({
               className="aeon-box-border aeon-box-shadow-bold aeon-transition"
               startIcon={<Iconify icon="akar-icons:thunder" />}
               onClick={() => {
-                setTab('mdi:location-on-outline')
+                // setTab('mdi:location-on-outline')
                 // setTravelMapVisible(true)
                 // openPaymentConfirmModal(item);
               }}

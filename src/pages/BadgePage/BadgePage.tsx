@@ -4,7 +4,6 @@ import useLocationStorage from "@/hook/useLocationStorage";
 import { decodeLocationkey, generateFractionalPrice } from "@/utils";
 import { Button, Card, CardMedia, Chip, Grid2, Typography } from "@mui/material";
 import {useTonAddress} from "@tonconnect/ui-react";
-import "mapbox-gl/dist/mapbox-gl.css";
 import { useEffect } from "react";
 
 export const BadgePage = ({

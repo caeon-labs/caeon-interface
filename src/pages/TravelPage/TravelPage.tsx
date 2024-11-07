@@ -1,17 +1,9 @@
-import {Iconify} from "@/components/iconify";
-import { Button, Grid2 } from "@mui/material";
-import {IconButton} from "@telegram-apps/telegram-ui";
-import { useTonAddress } from "@tonconnect/ui-react";
-import "mapbox-gl/dist/mapbox-gl.css";
-
 export const TravelPage = ({
   visible,
-  setVisible,
 }: {
   visible: boolean;
   setVisible: React.Dispatch<React.SetStateAction<boolean>>;
 }) => {
-  const tonWalletAddress = useTonAddress();
   return (
     <div>
       {/* <Grid2

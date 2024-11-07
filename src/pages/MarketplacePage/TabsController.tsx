@@ -1,13 +1,13 @@
-import { Iconify } from "@/components/iconify";
-import { ITabs } from "@/types/index.type";
-import { TABS } from "@/utils/constant";
-import { Card, Tab, Tabs } from "@mui/material";
-import { Direction } from "@smakss/react-scroll-direction";
+import {Iconify} from "@/components/iconify";
+import {ITabs} from "@/types/index.type";
+import {TABS} from "@/utils/constant";
+import {Card,Tab,Tabs} from "@mui/material";
+import {Direction} from "@smakss/react-scroll-direction";
 
 export const TabsController = ({
   tab,
   setTab,
-  scrollDir,
+  // scrollDir,/
 }: {
   setTab: React.Dispatch<React.SetStateAction<ITabs>>;
   tab: ITabs;

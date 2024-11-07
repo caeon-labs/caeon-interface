@@ -6,13 +6,12 @@ import {Direction} from "@smakss/react-scroll-direction";
 import {List} from "@telegram-apps/telegram-ui";
 import {useMemo,useState} from "react";
 import {AssetCard} from "./AssetCard";
-import {MarketplaceFilter} from "./MarketplaceFilter";
 
 export const MarketplacePage = ({
   setVisible,
   setCurrentAsset,
   visible,
-  scrollDir
+  // scrollDir
 }: {
   asset?: INFTMetadata;
   setCurrentAsset: React.Dispatch<
@@ -23,7 +22,7 @@ export const MarketplacePage = ({
   scrollDir?: Direction
 
 }) => {
-  const [marketplaceTab, setMarketplaceTab] =
+  const [marketplaceTab, _setMarketplaceTab] =
     useState<IMarketplaceFilterTabs>('mingcute:hat-2-line');
 
   const marketplaceAssetsFilter = useMemo(() => {

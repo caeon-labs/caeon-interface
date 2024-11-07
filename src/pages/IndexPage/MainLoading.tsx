@@ -1,7 +1,6 @@
 import {Iconify} from "@/components/iconify";
 import {LineMdLoadingLoop} from "@/components/icons/LineMdLoadingLoop";
 import {Avatar,Chip,Grid2,Typography} from "@mui/material";
-import "mapbox-gl/dist/mapbox-gl.css";
 import {useEffect,useRef,useState} from "react";
 
 let _confirm: (props: {
