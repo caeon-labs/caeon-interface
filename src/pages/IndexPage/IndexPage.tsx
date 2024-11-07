@@ -60,7 +60,7 @@ interface AppContextType {
 const AppContext = createContext<AppContextType | undefined>(undefined);
 
 export const IndexPage: FC = () => {
-  const [tab, setTab] = useState<ITabs>("mdi:location-on-outline");
+  const [tab, setTab] = useState<ITabs>("icon-park-outline:game-three");
   const [assetModal, setAssestModal] = useState<boolean>(false);
   const [travelMapModal, setTravelMapModal] = useState<boolean>(false);
   const [currentAsset, setCurrentAsset] = useState<INFTMetadata | undefined>();
@@ -121,7 +121,7 @@ export const IndexPage: FC = () => {
           />
         ) : tab === "iconamoon:certificate-badge" ? (
           <BadgePage visible={travelMapModal} setVisible={setTravelMapModal} />
-        ) : tab === "mdi:location-on-outline" ? (
+        ) : tab === "icon-park-outline:game-three" ? (
           <TravelPage visible={travelMapModal} setVisible={setTravelMapModal} />
         ) : (
           ""

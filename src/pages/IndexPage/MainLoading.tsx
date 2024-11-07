@@ -6,7 +6,7 @@ import {useEffect,useState} from "react";
 
 export const MainLoading = () => {
   const [loading, setLoading] = useState(true);
-  const [currentWord, setCurrentWord] = useState("Traeon");
+  const [currentWord, setCurrentWord] = useState("cAeon");
   const [fadeOut, setFadeOut] = useState(false); // State for fade-out effect
   const words = ["Travel", "Explore", "Web3", "Journey", "Adventure"]; // Words to animate
 
@@ -65,12 +65,12 @@ export const MainLoading = () => {
           }}
         >
           <Typography variant="body1" sx={{ mt: 4 }}>
-            Welcome to <strong style={{ }}>Traeon</strong>!
+            Welcome to <strong style={{ }}>cAeon</strong>!
           </Typography>
           <Typography variant="body1" sx={{ my: 2 }}>
             {currentWord}
           </Typography>
-          {/* <Avatar src="/logo-traeon.png" sx={{borderRadius: '10px', height: '200px', width: '200px'}}/> */}
+          {/* <Avatar src="/logo-cAeon.png" sx={{borderRadius: '10px', height: '200px', width: '200px'}}/> */}
 
           <LineMdLoadingLoop
             width={64}

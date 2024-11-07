@@ -1,11 +1,10 @@
 import {Iconify} from "@/components/iconify";
-import {ILocationStore, ITabs} from "@/types/index.type";
+import {ILocationStore,ITabs} from "@/types/index.type";
 import {encodeLocationKey} from "@/utils";
 import {Button,Grid2,IconButton} from "@mui/material";
 import {cloudStorage as cloudData} from "@telegram-apps/sdk";
 import "mapbox-gl/dist/mapbox-gl.css";
 import {useRef} from "react";
-import useLocationTracking from "./hook/useLocationTracking";
 
 export const TravelMapModal = ({
   visible,
@@ -20,43 +19,7 @@ export const TravelMapModal = ({
   // const [mapRef, setMapRef] = useState<
   //   React.MutableRefObject<HTMLDivElement | null>
   // >({ current: null });
-  const PK_TOKEN =
-    "pk.eyJ1IjoiYXZpbmNlbnRhIiwiYSI6ImNtMWxsMGJicDBhNjcycG85OWZ5Znd5d2UifQ.krV7qPCTyTtHq53LoSjwQg";
 
-  const {
-    // zoom,
-    locationData,
-    // locationName,
-    // currentLocationRef,
-    refresh,
-    // mapLoading,
-    // updateLocationData,
-  } = useLocationTracking(mapContainerRef, PK_TOKEN, setTab);
-  const onCheckinWithMap = async () => {
-    const contextLength = locationData?.context.length || 2;
-    const region = locationData?.context?.[contextLength - 2]?.text;
-    const country = locationData?.context?.[contextLength - 1]?.text;
-    const locationKeyHash = encodeLocationKey(country, region);
-    const locationStorageData: ILocationStore = JSON.parse(
-      (await cloudData.getItem(locationKeyHash)) || "{}"
-    );
-    console.log(locationData);
-    if (locationData?.id) {
-      locationStorageData[locationData?.id] = {
-        place_name: locationData?.place_name,
-        center: locationData.center,
-      };
-      console.log("add", locationKeyHash, JSON.stringify(locationStorageData));
-      await cloudData.setItem(
-        locationKeyHash,
-        JSON.stringify(locationStorageData)
-      );
-      console.log("Done", locationKeyHash, JSON.stringify(locationStorageData));
-    }
-    setTimeout(async () => {
-      await refresh();
-    }, 1000);
-  };
   return (
     <div
       style={{
@@ -114,8 +77,6 @@ export const TravelMapModal = ({
             className="aeon-box-border aeon-box-shadow-bold aeon-transition"
             startIcon={<Iconify icon="entypo:location" />}
             onClick={async () => {
-              await refresh();
-              onCheckinWithMap();
             }}
           >
             Checkin

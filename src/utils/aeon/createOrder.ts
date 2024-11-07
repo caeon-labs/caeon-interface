@@ -19,7 +19,7 @@ interface RequestParams {
   paymentNetworks?: string;
   orderModel?: string;
   tgModel?: string;
-  // for Traeon
+  // for cAeon
 }
 
 // Define the API request function

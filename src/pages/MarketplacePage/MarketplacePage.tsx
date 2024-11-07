@@ -41,11 +41,11 @@ export const MarketplacePage = ({
   }, [marketplaceTab]);
   return (
     <List style={{ textAlign: "center" }}>
-      <MarketplaceFilter
+      {/* <MarketplaceFilter
         marketplaceTab={marketplaceTab}
         setMarketplaceTab={setMarketplaceTab}
         scrollDir={scrollDir}
-      />
+      /> */}
       <Grid2 container spacing={3}>
         {marketplaceAssetsFilter.map((assetItem: INFTMetadata, _) => {
           return <AssetCard visible={visible} setVisible={setVisible} setCurrentAsset={setCurrentAsset} item={assetItem} key={_} />;

@@ -8,7 +8,7 @@ export type INFTMetadata = {
   }>;
 };
 export type ITabs =
-  | "mdi:location-on-outline"
+  | "icon-park-outline:game-three"
   | "akar-icons:thunder"
   | "iconamoon:certificate-badge"
   | "mdi:shopping-outline";
