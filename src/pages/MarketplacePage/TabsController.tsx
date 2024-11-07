@@ -22,7 +22,7 @@ export const TabsController = ({
       sx={{
         cursor: "pointer",
         position: "fixed",
-        zIndex: 101,
+        zIndex: tab === "icon-park-outline:game-three" ? 101 : 0,
         width: "40%",
         marginLeft: "30%",
         border: '1px solid black',

@@ -65,7 +65,7 @@ export const MainLoading = () => {
         spacing={1}
         sx={{
           height: "100vh",
-          zIndex: 3,
+          zIndex: 102,
           position: "fixed",
           width: "100vw",
           textAlign: "center",
