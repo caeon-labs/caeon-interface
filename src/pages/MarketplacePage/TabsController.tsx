@@ -25,6 +25,7 @@ export const TabsController = ({
         zIndex: 101,
         width: "40%",
         marginLeft: "30%",
+        border: '1px solid black',
         // height: tab === 'icon-park-outline:game-three' ? '1rem' : '0',
         transition: "0.2s",
         bottom: tab === "icon-park-outline:game-three" ? '0.5rem' : "1rem",
