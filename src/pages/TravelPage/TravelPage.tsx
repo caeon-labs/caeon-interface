@@ -1,7 +1,7 @@
-import {
-  Grid2
-} from "@mui/material";
-import {useTonAddress} from "@tonconnect/ui-react";
+import {Iconify} from "@/components/iconify";
+import { Button, Grid2 } from "@mui/material";
+import {IconButton} from "@telegram-apps/telegram-ui";
+import { useTonAddress } from "@tonconnect/ui-react";
 import "mapbox-gl/dist/mapbox-gl.css";
 
 export const TravelPage = ({
@@ -11,17 +11,56 @@ export const TravelPage = ({
   visible: boolean;
   setVisible: React.Dispatch<React.SetStateAction<boolean>>;
 }) => {
-  const tonWalletAddress = useTonAddress()
+  const tonWalletAddress = useTonAddress();
   return (
     <div>
-    {!visible ? (
-      <Grid2 container spacing={1} p={2}>
-        <iframe src="https://caeon-game.netlify.app/" style={{width: '100vw', height: '100vh'}}/>
-      </Grid2>
-    ) : (
-      ""
-    )}
-  </div>
-  
+      {/* <Grid2
+        size={12}
+        sx={{
+          position: "fixed",
+          display: "flex",
+          zIndex: 101,
+          left: '2rem',
+          top: 0,
+          justifyContent: "space-between",
+          paddingTop: "0.5rem",
+          paddingBottom: "0.5rem",
+          background: "none",
+        }}
+      >
+        <div style={{ marginTop: 2 }}>
+          <IconButton
+            style={{
+              borderRadius: "50%",
+              width: '48px',
+              height: '48px',
+              padding: 1,
+              background: 'white'
+            }}
+            className="aeon-box-shadow-bold aeon-transition"
+            onClick={() => {
+              setVisible(false);
+            }}
+          >
+            <Iconify icon="ic:outline-arrow-back-ios" style={{fontSize: '50px', color: 'black'}} height={'30px'} width={'30px'}/>
+          </IconButton>{" "}
+        </div>
+      </Grid2> */}
+      {!visible ? (
+        <iframe
+          src="https://caeon-game.netlify.app/"
+          style={{
+            width: "100vw",
+            height: "100vh",
+            position: "fixed",
+            top: 0,
+            zIndex: 100,
+            border: "none",
+          }}
+        />
+      ) : (
+        ""
+      )}
+    </div>
   );
 };

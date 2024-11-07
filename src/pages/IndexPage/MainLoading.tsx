@@ -2,16 +2,36 @@ import {Iconify} from "@/components/iconify";
 import {LineMdLoadingLoop} from "@/components/icons/LineMdLoadingLoop";
 import {Avatar,Chip,Grid2,Typography} from "@mui/material";
 import "mapbox-gl/dist/mapbox-gl.css";
-import {useEffect,useState} from "react";
+import {useEffect,useRef,useState} from "react";
+
+let _confirm: (props: {
+  resolve?: (value: boolean) => void;
+  status: boolean;
+}) => void = () => {};
 
 export const MainLoading = () => {
   const [loading, setLoading] = useState(true);
   const [currentWord, setCurrentWord] = useState("cAeon");
   const [fadeOut, setFadeOut] = useState(false); // State for fade-out effect
   const words = ["Travel", "Explore", "Web3", "Journey", "Adventure"]; // Words to animate
+  const resolveRef = useRef<(value: boolean) => void>(() => {
+    throw new Error("RESOLVE_REF_UNSET");
+  });
 
   const animationDuration = 300; // Change word every second
 
+  useEffect(() => {
+    _confirm = ({
+      resolve,
+      status,
+    }: {
+      resolve?: (value: boolean) => void;
+      status: boolean;
+    }) => {
+      if (resolve) resolveRef.current = resolve;
+      setLoading(status);
+    };
+  }, []);
   // Simulate loading for 5 seconds
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -126,4 +146,10 @@ export const MainLoading = () => {
       </style>
     </div>
   );
+};
+
+export const openMainLoading = async (
+  status: boolean
+): Promise<boolean> => {
+  return new Promise((resolve) => _confirm({ resolve, status }));
 };

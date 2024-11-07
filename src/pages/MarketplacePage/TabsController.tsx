@@ -1,32 +1,33 @@
-import {Iconify} from "@/components/iconify";
-import {ITabs} from "@/types/index.type";
-import {TABS} from "@/utils/constant";
-import {Card,Tab,Tabs} from "@mui/material";
-import {Direction} from "@smakss/react-scroll-direction";
+import { Iconify } from "@/components/iconify";
+import { ITabs } from "@/types/index.type";
+import { TABS } from "@/utils/constant";
+import { Card, Tab, Tabs } from "@mui/material";
+import { Direction } from "@smakss/react-scroll-direction";
 
 export const TabsController = ({
   tab,
   setTab,
-  scrollDir
+  scrollDir,
 }: {
   setTab: React.Dispatch<React.SetStateAction<ITabs>>;
   tab: ITabs;
-  scrollDir?: Direction
+  scrollDir?: Direction;
 }) => {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const onSelectTab = (_:any, newTab: ITabs) => {
+  const onSelectTab = (_: any, newTab: ITabs) => {
     setTab(newTab);
   };
   return (
     <Card
       sx={{
-        cursor: 'pointer',
+        cursor: "pointer",
         position: "fixed",
-        width: "80%",
-        marginLeft: "10%",
-        marginBottom: scrollDir === Direction.Down ? '-5rem' : '0',
-        transition: '0.4s',
-        bottom: "1rem",
+        zIndex: 101,
+        width: "40%",
+        marginLeft: "30%",
+        // height: tab === 'icon-park-outline:game-three' ? '1rem' : '0',
+        transition: "0.2s",
+        bottom: tab === "icon-park-outline:game-three" ? '0.5rem' : "1rem",
         borderRadius: "20px",
         background: "rgb(230, 230, 230)",
       }}
@@ -35,14 +36,22 @@ export const TabsController = ({
         onChange={onSelectTab}
         centered
         aria-label="icon tabs example"
-        sx={{ marginBottom: "0.5rem", marginTop: "0.5rem" }}
+        sx={
+          tab === "icon-park-outline:game-three"
+            ? { transition: "0.2s" }
+            : {
+                transition: "0.2s",
+                marginBottom: "0.5rem",
+                marginTop: "0.5rem",
+              }
+        }
       >
         {Object.keys(TABS).map((_tab: string, _) => {
           return (
             <Tab
               sx={
                 _tab === tab
-                  ? { borderBottom: "1px solid black" }
+                  ? { borderBottom: tab === "icon-park-outline:game-three" ? "2px solid gray" : '1px solid white' }
                   : { borderBottom: "1px solid rgb(230, 230, 230)" }
               }
               className="aeon-transition"
