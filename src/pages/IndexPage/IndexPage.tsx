@@ -60,7 +60,7 @@ interface AppContextType {
 const AppContext = createContext<AppContextType | undefined>(undefined);
 
 export const IndexPage: FC = () => {
-  const [tab, setTab] = useState<ITabs>("icon-park-outline:game-three");
+  const [tab, setTab] = useState<ITabs>("mdi:shopping-outline");
   const [assetModal, setAssestModal] = useState<boolean>(false);
   const [travelMapModal, setTravelMapModal] = useState<boolean>(false);
   const [currentAsset, setCurrentAsset] = useState<INFTMetadata | undefined>();

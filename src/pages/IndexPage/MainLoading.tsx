@@ -12,7 +12,7 @@ export const MainLoading = () => {
   const [loading, setLoading] = useState(true);
   const [currentWord, setCurrentWord] = useState("cAeon");
   const [fadeOut, setFadeOut] = useState(false); // State for fade-out effect
-  const words = ["Travel", "Explore", "Web3", "Journey", "Adventure"]; // Words to animate
+  const words = ["Cat", "Gamefi", "NFTs", "TON", "Aeon Payment"]; // Words to animate
   const resolveRef = useRef<(value: boolean) => void>(() => {
     throw new Error("RESOLVE_REF_UNSET");
   });
