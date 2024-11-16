@@ -97,7 +97,6 @@ export const MainLoading = () => {
             style={{ margin: "auto", animation: "spin 1s linear infinite" }}
           />
           {/* <LinearProgress sx={{ background: 'black', height: '10px' ,margin: "auto"}}/> */}
-          {/* <CircularProgress  sx={{margin: "auto"}}/> */}
           <Typography variant="body1" sx={{ mb: 4 }}>
             Powered by
             <br />
